@@ -39,3 +39,17 @@ variable "env" {
   default     = {}
   description = "A map of custom environment variables (e.g. key=value)"
 }
+
+variable "notification_channels" {
+  type        = list(string)
+  description = "List of notification channel IDs which alerts should be sent to."
+  default     = [""]
+}
+
+variable "alert_documentation" {
+  type        = string
+  description = "Documentation text for the alert policy."
+  default     = <<-EOT
+  to be defined
+  EOT
+}
