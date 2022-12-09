@@ -70,11 +70,9 @@ resource "google_monitoring_alert_policy" "prober_uptime" {
 
   documentation {
     content = <<-EOT
-    Please consult the playbook entry [here](https://chainguard-dev.com) for how to respond.
+    < Add your documentation or link to a playbook here >
     EOT
   }
-
-  # notification_channels = var.notification_channels
 
   depends_on = [
     module.prober

@@ -1,3 +1,8 @@
+/*
+Copyright 2022 Chainguard, Inc.
+SPDX-License-Identifier: Apache-2.0
+*/
+
 locals {
   # GCLB is expensive, so we only provision one when we have to put multiple
   # Cloud Run locations behind one.
