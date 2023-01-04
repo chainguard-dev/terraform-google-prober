@@ -23,7 +23,7 @@ resource "google_service_account" "prober" {
 
 // Build the prober into an image we can run on Cloud Run.
 resource "ko_image" "image" {
-  base_image  = "cgr.dev/chainguard/static"
+  base_image  = var.base_image
   importpath  = var.importpath
   working_dir = var.working_dir
 }
