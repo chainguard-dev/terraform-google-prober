@@ -14,6 +14,14 @@ terraform {
   }
 }
 
+locals {
+  repo = var.repository != "" ? var.repository : "gcr.io/${var.project_id}"
+}
+
+provider "ko" {
+  repo = local.repo
+}
+
 // Create a service account for the prober to run as.
 resource "google_service_account" "prober" {
   project = var.project_id
