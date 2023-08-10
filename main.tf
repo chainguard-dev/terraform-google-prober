@@ -101,6 +101,17 @@ resource "google_cloud_run_service" "probers" {
             value = env.value
           }
         }
+
+        resources {
+          limits = {
+            cpu    = var.cpu
+            memory = var.memory
+          }
+          requests = {
+            cpu    = var.cpu
+            memory = var.memory
+          }
+        }
       }
     }
   }
@@ -133,8 +144,8 @@ resource "google_monitoring_uptime_check_config" "regional_uptime_check" {
 
   display_name = "${var.name}-uptime-regional"
   project      = var.project_id
-  timeout      = "60s"
-  period       = "300s"
+  timeout      = var.timeout
+  period       = var.period
 
   http_check {
     path         = "/"
@@ -173,8 +184,8 @@ resource "google_monitoring_uptime_check_config" "global_uptime_check" {
 
   display_name = "${var.name}-uptime-global"
   project      = var.project_id
-  timeout      = "60s"
-  period       = "300s"
+  timeout      = var.timeout
+  period       = var.period
 
   http_check {
     path         = "/"
