@@ -55,3 +55,27 @@ variable "env" {
   default     = {}
   description = "A map of custom environment variables (e.g. key=value)"
 }
+
+variable "timeout" {
+  type        = string
+  default     = "60s"
+  description = "The timeout for the prober in seconds."
+}
+
+variable "period" {
+  type        = string
+  default     = "300s"
+  description = "The period for the prober in seconds."
+}
+
+variable "cpu" {
+  type        = string
+  default     = "1000m"
+  description = "The CPU limit for the prober."
+}
+
+variable "memory" {
+  type        = string
+  default     = "512Mi"
+  description = "The memory limit for the prober."
+}
