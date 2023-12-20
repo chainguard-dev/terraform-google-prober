@@ -31,7 +31,7 @@ resource "google_dns_managed_zone" "prober_zone" {
 }
 
 resource "google_service_account" "prober" {
-  project = var.project_id
+  project    = var.project_id
   account_id = "complex-example-prober"
 }
 
@@ -42,6 +42,7 @@ module "prober" {
   name            = "complex-example"
   project_id      = var.project_id
   service-account = google_service_account.prober.email
+  enable_alert    = true
 
   importpath  = "github.com/chainguard-dev/terraform-google-prober/examples/complex"
   working_dir = path.module
