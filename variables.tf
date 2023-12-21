@@ -92,3 +92,9 @@ variable "alert_description" {
   default     = "An uptime check has failed."
   description = "Alert documentation. Use this to link to playbooks or give additional context."
 }
+
+variable "notification_channels" {
+  type        = list(string)
+  default     = []
+  description = "A list of notification channels to send alerts to."
+}

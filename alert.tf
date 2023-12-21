@@ -48,4 +48,6 @@ resource "google_monitoring_alert_policy" "uptime_alert" {
   documentation {
     content = var.alert_description
   }
+
+  notification_channels = var.notification_channels
 }
