@@ -147,6 +147,7 @@ No modules.
 | <a name="input_locations"></a> [locations](#input\_locations) | Where to run the Cloud Run services. | `list(string)` | <pre>[<br>  "us-central1"<br>]</pre> | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | The memory limit for the prober. | `string` | `"512Mi"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to prefix to created resources. | `string` | n/a | yes |
+| <a name="input_notification_channels"></a> [notification\_channels](#input\_notification\_channels) | A list of notification channels to send alerts to. | `list(string)` | `[]` | no |
 | <a name="input_period"></a> [period](#input\_period) | The period for the prober in seconds. | `string` | `"300s"` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The project that will host the prober. | `string` | n/a | yes |
 | <a name="input_repository"></a> [repository](#input\_repository) | Container repository to publish images to. | `string` | `""` | no |
