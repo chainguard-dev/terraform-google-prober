@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0
 */
 
 variable "name" {
+  type        = string
   description = "Name to prefix to created resources."
 }
 
@@ -78,4 +79,22 @@ variable "memory" {
   type        = string
   default     = "512Mi"
   description = "The memory limit for the prober."
+}
+
+variable "enable_alert" {
+  type        = bool
+  default     = false
+  description = "If true, alert on failures. Outputs will return the alert ID for notification and dashboards."
+}
+
+variable "alert_description" {
+  type        = string
+  default     = "An uptime check has failed."
+  description = "Alert documentation. Use this to link to playbooks or give additional context."
+}
+
+variable "notification_channels" {
+  type        = list(string)
+  default     = []
+  description = "A list of notification channels to send alerts to."
 }
