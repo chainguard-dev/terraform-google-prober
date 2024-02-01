@@ -32,7 +32,7 @@ resource "google_monitoring_alert_policy" "uptime_alert" {
       EOT
 
       // TODO(jason): Make these configurable.
-      threshold_value = 1
+      threshold_value = 2
       trigger {
         count   = 1
         percent = 0
