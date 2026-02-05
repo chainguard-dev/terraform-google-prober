@@ -24,7 +24,7 @@ jobs:
           persist-credentials: false
 
       - name: Render terraform docs and fail on diff
-        uses: terraform-docs/gh-actions@e47bfa196e79fa50987ef391be236d9d97b0c786 # v1.2.0
+        uses: step-security/terraform-docs-action@43f977ff483b4dcf2d1c13fce93bfc30b1164bd9 # v1.4.4
         with:
           working-dir: .
           output-file: README.md
